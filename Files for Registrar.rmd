@@ -1,0 +1,48 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
+#This script prepares Muser data export files to be sent to the Registrar's Office
+
+## File created: 8/29/2022
+###Author: Kim Manturuk
+
+```{r include=FALSE}
+library(tidyverse)
+library(esquisse)
+library(readr)
+```
+
+
+### Step 1: Import Applications file and select mentor ID variable
+Note - the code below is for the 2022_Spring_2_Applicatons file; update the file path as needed.
+
+```{r}
+
+
+X2022_Spring_2_Applications <- read_csv("~/Desktop/Muser/Muser Data Library/Data Files RAW/2022_Spring_2_Applications.csv")
+
+X2022_Spring_2_Applications_Registrar_Mentors <- select(X2022_Spring_2_Applications, "NetID (Mentor)")
+X2022_Spring_2_Applications_Registrar_Mentors <- X2022_Spring_2_Applications_Registrar_Mentors[!duplicated(X2022_Spring_2_Applications_Registrar_Mentors),]
+
+str_split_fixed(X2022_Spring_2_Applications$Email...7, "@", n=2)
+
+X2022_Spring_2_Applications[ , 10:11] <- str_split_fixed(X2022_Spring_2_Applications$Email...7, "@", n=2)
+X2022_Spring_2_Applications["NetID (Student)"] <- X2022_Spring_2_Applications["V1"]
+X2022_Spring_2_Applications <- X2022_Spring_2_Applications[ , ! names(X2022_Spring_2_Applications) %in% c("V1", "V2")]
+
+X2022_Spring_2_Applications_Registrar_Students <- select(X2022_Spring_2_Applications, "NetID (Student)")
+X2022_Spring_2_Applications_Registrar_Students <- X2022_Spring_2_Applications_Registrar_Students[!duplicated(X2022_Spring_2_Applications_Registrar_Students),]
+```
+
+This creates a data file to be sent to the Registrar with the Mentor NetIDs needed to merge back into the data.
+
+### Step 2: Import ApplicationCounts file and select student ID variable
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
+# Muser Data File Naming Conventions
+
+## Data file naming conventions
+
+#### Date created: 8/17/22
+#### Last updated: 8/17/22
+#### Author: Kim Manturuk
+
+
+
+This file describes the file naming conventions and variables available in the Muser data exports.
+
+For each round, there are 2 files: 1) **Applications**, and 2) **Application counts**.
+The files are named according to the following format:
+
+YYYY_Round_RoundNumber_FileType
+
+YYYY = Year
+Round = Fall, Spring, Summer
+RoundNumber = 1, 2 (some semesters have 1 round and some have 2)
+FileType = Applications or ApplicationCounts
+
+This document also includes information about when the projects associated with each round begin:
+
+2022_Fall_1 Projects begin fall 2022
+
+2022_Spring_2 Projects begin fall 2022
+
+2022_Spring_1 Projects begin summer 2022
+
+2021_Fall_2 Projects begin spring 2022
+
+2021_Fall_1 Projects begin fall 2021
+
+2021_Spring_1 Projects begin fall 2021
+
+2021_Summer_1 Projects begin summer 2021 (out of chronological order in Muser data portal)
+
+2020_Fall_2 Projects begin spring 2021
+
+2020_Fall_1 Projects begin fall 2020
+
+2020_Summer_1 Projects begin summer 2020
+
